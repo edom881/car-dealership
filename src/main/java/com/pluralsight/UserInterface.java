@@ -17,6 +17,7 @@ public class UserInterface {
             System.out.println("\n--- Car Dealership Menu ---");
             System.out.println("1 - List all vehicles");
             System.out.println("2 - Find vehicles by price");
+            System.out.println("3 - Find vehicles by make/model");
             System.out.println("99 - Quit");
 
             System.out.print("Enter your choice: ");
@@ -33,6 +34,9 @@ public class UserInterface {
                     processGetByPriceRequest();
                     break;
 
+                case 3:
+                    processGetByMakeModelRequest();
+                    break;
 
                 case 99:
                     running = false;
@@ -44,6 +48,7 @@ public class UserInterface {
             }
         }
     }
+
     private void processGetByPriceRequest() {
 
         System.out.print("Enter minimum price: ");
@@ -74,5 +79,14 @@ public class UserInterface {
             System.out.println(vehicle);
         }
     }
+    private void processGetByMakeModelRequest() {
 
+        System.out.print("Enter make: ");
+        String make = scanner.nextLine();
+
+        System.out.print("Enter model: ");
+        String model = scanner.nextLine();
+
+        displayVehicles(dealership.getVehiclesByMakeModel(make, model));
+    }
 }
