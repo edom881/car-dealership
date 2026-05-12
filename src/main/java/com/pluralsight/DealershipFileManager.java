@@ -12,6 +12,7 @@ public class DealershipFileManager {
 
         try { BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
             String dealershipLine = reader.readLine();
+            String[] dealershipParts = dealershipLine.split("\\|");
 
         } catch (IOException e) {
             System.out.println("Error reading inventory file.");
