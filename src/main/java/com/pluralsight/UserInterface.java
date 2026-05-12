@@ -37,6 +37,9 @@ public class UserInterface {
                 case 3:
                     processGetByMakeModelRequest();
                     break;
+                case 4:
+                    processGetByYearRequest();
+                    break;
 
                 case 99:
                     running = false;
@@ -88,5 +91,16 @@ public class UserInterface {
         String model = scanner.nextLine();
 
         displayVehicles(dealership.getVehiclesByMakeModel(make, model));
+    }
+    private void processGetByYearRequest() {
+
+        System.out.print("Enter minimum year: ");
+        int min = scanner.nextInt();
+
+        System.out.print("Enter maximum year: ");
+        int max = scanner.nextInt();
+        scanner.nextLine();
+
+        displayVehicles(dealership.getVehiclesByYear(min, max));
     }
 }
