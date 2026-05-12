@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import java.util.ArrayList;
 
+
 public class Dealership {
 
     private String name;
@@ -73,5 +74,9 @@ public class Dealership {
     }
     public void removeVehicle(Vehicle vehicle) {
 
+    }
+    public Dealership getDealership() {
+
+        return null;
     }
 }
