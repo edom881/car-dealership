@@ -75,8 +75,6 @@ public class Dealership {
     public void removeVehicle(Vehicle vehicle) {
 
     }
-    public Dealership getDealership() {
 
-        return null;
-    }
 }
+
