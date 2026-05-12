@@ -5,4 +5,7 @@ public class Vehicle {
     private int year;
     private String make;
     private String model;
+    private String vehicleType;
+    private String color;
+
 }
