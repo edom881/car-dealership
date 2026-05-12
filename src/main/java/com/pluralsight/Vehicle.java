@@ -13,5 +13,6 @@ public class Vehicle {
                    String vehicleType, String color,
                    int odometer, double price) {
 
+        this.vin = vin;
     }
 }
