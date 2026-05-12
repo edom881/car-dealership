@@ -45,4 +45,7 @@ public class Dealership {
         this.phone = phone;
         this.inventory = new ArrayList<>();
     }
+    public void addVehicle(Vehicle vehicle) {
+        inventory.add(vehicle);
+    }
 }
