@@ -19,6 +19,38 @@ public class DealershipFileManager {
                     dealershipParts[2]
             );
 
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+
+                String[] parts = line.split("\\|");
+
+                int vin = Integer.parseInt(parts[0]);
+                int year = Integer.parseInt(parts[1]);
+                String make = parts[2];
+                String model = parts[3];
+                String vehicleType = parts[4];
+                String color = parts[5];
+                int odometer = Integer.parseInt(parts[6]);
+                double price = Double.parseDouble(parts[7]);
+
+                Vehicle vehicle = new Vehicle(
+                        vin,
+                        year,
+                        make,
+                        model,
+                        vehicleType,
+                        color,
+                        odometer,
+                        price
+                );
+
+                dealership.addVehicle(vehicle);
+            }
+
+            reader.close();
+
+            return dealership;
 
         } catch (IOException e) {
             System.out.println("Error reading inventory file.");
