@@ -21,6 +21,7 @@ public class UserInterface {
             System.out.println("4 - Find vehicles by year");
             System.out.println("5 - Find vehicles by color");
             System.out.println("6 - Find vehicles by mileage");
+            System.out.println("7 - Find vehicles by type");
             System.out.println("99 - Quit");
 
             System.out.print("Enter your choice: ");
@@ -49,6 +50,10 @@ public class UserInterface {
                 case 6:
                     processGetByMileageRequest();
                     break;
+                case 7:
+                    processGetByVehicleTypeRequest();
+                    break;
+
 
 
                 case 99:
@@ -130,5 +135,12 @@ public class UserInterface {
         scanner.nextLine();
 
         displayVehicles(dealership.getVehiclesByMileage(min, max));
+    }
+    private void processGetByVehicleTypeRequest() {
+
+        System.out.print("Enter vehicle type car/truck/SUV/van: ");
+        String vehicleType = scanner.nextLine();
+
+        displayVehicles(dealership.getVehiclesByType(vehicleType));
     }
 }
