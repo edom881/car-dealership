@@ -15,5 +15,7 @@ public class Vehicle {
 
         this.vin = vin;
         this.year = year;
+        this.make = make;
+        this.model = model;
     }
 }
