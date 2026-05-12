@@ -71,4 +71,7 @@ public class Dealership {
     public ArrayList<Vehicle> getVehiclesByType(String vehicleType) {
         return null;
     }
+    public void removeVehicle(Vehicle vehicle) {
+
+    }
 }
