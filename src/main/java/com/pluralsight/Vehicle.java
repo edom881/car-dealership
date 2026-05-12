@@ -14,5 +14,6 @@ public class Vehicle {
                    int odometer, double price) {
 
         this.vin = vin;
+        this.year = year;
     }
 }
