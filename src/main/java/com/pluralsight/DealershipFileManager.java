@@ -11,6 +11,7 @@ public class DealershipFileManager {
     public Dealership getDealership() {
 
         try { BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
+            String dealershipLine = reader.readLine();
 
         } catch (IOException e) {
             System.out.println("Error reading inventory file.");
