@@ -3,6 +3,7 @@ package com.pluralsight;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.FileWriter;
 
 public class DealershipFileManager {
 
@@ -61,6 +62,26 @@ public class DealershipFileManager {
         return null;
     }
     public void saveDealership(Dealership dealership) {
+        public void saveDealership(Dealership dealership) {
+
+            try {
+                FileWriter writer = new FileWriter(FILE_NAME);
+
+                writer.write(dealership.getName() + "|" +
+                        dealership.getAddress() + "|" +
+                        dealership.getPhone() + "\n");
+
+                for (Vehicle vehicle : dealership.getAllVehicles()) {
+                    writer.write(vehicle.toString() + "\n");
+                }
+
+                writer.close();
+
+            } catch (IOException e) {
+                System.out.println("Error saving inventory file.");
+            }
+        }
+
 
     }
 }
