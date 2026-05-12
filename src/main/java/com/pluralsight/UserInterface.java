@@ -16,6 +16,7 @@ public class UserInterface {
 
             System.out.println("\n--- Car Dealership Menu ---");
             System.out.println("1 - List all vehicles");
+            System.out.println("2 - Find vehicles by price");
             System.out.println("99 - Quit");
 
             System.out.print("Enter your choice: ");
@@ -28,6 +29,11 @@ public class UserInterface {
                     processAllVehiclesRequest();
                     break;
 
+                case 2:
+                    processGetByPriceRequest();
+                    break;
+
+
                 case 99:
                     running = false;
                     System.out.println("Goodbye!");
@@ -38,6 +44,18 @@ public class UserInterface {
             }
         }
     }
+    private void processGetByPriceRequest() {
+
+        System.out.print("Enter minimum price: ");
+        double min = scanner.nextDouble();
+
+        System.out.print("Enter maximum price: ");
+        double max = scanner.nextDouble();
+        scanner.nextLine();
+
+        displayVehicles(dealership.getVehiclesByPrice(min, max));
+    }
+
 
     private void init() {
 
