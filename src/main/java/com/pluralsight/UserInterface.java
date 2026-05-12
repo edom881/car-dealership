@@ -23,6 +23,7 @@ public class UserInterface {
             System.out.println("6 - Find vehicles by mileage");
             System.out.println("7 - Find vehicles by type");
             System.out.println("8 - Add a vehicle");
+            System.out.println("9 - Remove a vehicle");
             System.out.println("99 - Quit");
 
             System.out.print("Enter your choice: ");
@@ -56,6 +57,9 @@ public class UserInterface {
                     break;
                 case 8:
                     processAddVehicleRequest();
+                    break;
+                case 9:
+                    processRemoveVehicleRequest();
                     break;
 
 
@@ -182,5 +186,32 @@ public class UserInterface {
         fileManager.saveDealership(dealership);
 
         System.out.println("Vehicle added successfully.");
+    }
+    private void processRemoveVehicleRequest() {
+
+        System.out.print("Enter VIN of vehicle to remove: ");
+        int vin = scanner.nextInt();
+        scanner.nextLine();
+
+        Vehicle vehicleToRemove = null;
+
+        for (Vehicle vehicle : dealership.getAllVehicles()) {
+
+            if (vehicle.getVin() == vin) {
+                vehicleToRemove = vehicle;
+                break;
+            }
+        }
+
+        if (vehicleToRemove != null) {
+            dealership.removeVehicle(vehicleToRemove);
+
+            DealershipFileManager fileManager = new DealershipFileManager();
+            fileManager.saveDealership(dealership);
+
+            System.out.println("Vehicle removed successfully.");
+        } else {
+            System.out.println("Vehicle not found.");
+        }
     }
 }

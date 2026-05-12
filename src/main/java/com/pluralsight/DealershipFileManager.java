@@ -62,7 +62,6 @@ public class DealershipFileManager {
         return null;
     }
     public void saveDealership(Dealership dealership) {
-        public void saveDealership(Dealership dealership) {
 
             try {
                 FileWriter writer = new FileWriter(FILE_NAME);
@@ -84,4 +83,4 @@ public class DealershipFileManager {
 
 
     }
-}
+

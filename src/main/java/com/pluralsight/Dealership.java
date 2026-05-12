@@ -141,8 +141,7 @@ public class Dealership {
         return matchingVehicles;
     }
     public void removeVehicle(Vehicle vehicle) {
-
+        inventory.remove(vehicle);
     }
-
 }
 
