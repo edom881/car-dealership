@@ -7,5 +7,6 @@ public class Vehicle {
     private String model;
     private String vehicleType;
     private String color;
-
+    private int odometer;
+    private double price;
 }
