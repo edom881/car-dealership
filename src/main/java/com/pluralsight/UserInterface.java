@@ -20,6 +20,7 @@ public class UserInterface {
             System.out.println("3 - Find vehicles by make/model");
             System.out.println("4 - Find vehicles by year");
             System.out.println("5 - Find vehicles by color");
+            System.out.println("6 - Find vehicles by mileage");
             System.out.println("99 - Quit");
 
             System.out.print("Enter your choice: ");
@@ -44,6 +45,9 @@ public class UserInterface {
                     break;
                 case 5:
                     processGetByColorRequest();
+                    break;
+                case 6:
+                    processGetByMileageRequest();
                     break;
 
 
@@ -115,5 +119,16 @@ public class UserInterface {
         String color = scanner.nextLine();
 
         displayVehicles(dealership.getVehiclesByColor(color));
+    }
+    private void processGetByMileageRequest() {
+
+        System.out.print("Enter minimum mileage: ");
+        int min = scanner.nextInt();
+
+        System.out.print("Enter maximum mileage: ");
+        int max = scanner.nextInt();
+        scanner.nextLine();
+
+        displayVehicles(dealership.getVehiclesByMileage(min, max));
     }
 }
