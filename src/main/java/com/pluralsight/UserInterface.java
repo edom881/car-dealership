@@ -22,6 +22,7 @@ public class UserInterface {
             System.out.println("5 - Find vehicles by color");
             System.out.println("6 - Find vehicles by mileage");
             System.out.println("7 - Find vehicles by type");
+            System.out.println("8 - Add a vehicle");
             System.out.println("99 - Quit");
 
             System.out.print("Enter your choice: ");
@@ -52,6 +53,9 @@ public class UserInterface {
                     break;
                 case 7:
                     processGetByVehicleTypeRequest();
+                    break;
+                case 8:
+                    processAddVehicleRequest();
                     break;
 
 
@@ -142,5 +146,39 @@ public class UserInterface {
         String vehicleType = scanner.nextLine();
 
         displayVehicles(dealership.getVehiclesByType(vehicleType));
+    }
+    private void processAddVehicleRequest() {
+
+        System.out.print("Enter VIN: ");
+        int vin = scanner.nextInt();
+
+        System.out.print("Enter year: ");
+        int year = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Enter make: ");
+        String make = scanner.nextLine();
+
+        System.out.print("Enter model: ");
+        String model = scanner.nextLine();
+
+        System.out.print("Enter vehicle type: ");
+        String vehicleType = scanner.nextLine();
+
+        System.out.print("Enter color: ");
+        String color = scanner.nextLine();
+
+        System.out.print("Enter odometer: ");
+        int odometer = scanner.nextInt();
+
+        System.out.print("Enter price: ");
+        double price = scanner.nextDouble();
+        scanner.nextLine();
+
+        Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+
+        dealership.addVehicle(vehicle);
+
+        System.out.println("Vehicle added successfully.");
     }
 }
