@@ -10,6 +10,8 @@ public class DealershipFileManager {
 
     public Dealership getDealership() {
 
+
+
         try { BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME));
             String dealershipLine = reader.readLine();
             String[] dealershipParts = dealershipLine.split("\\|");
@@ -57,5 +59,8 @@ public class DealershipFileManager {
         }
 
         return null;
+    }
+    public void saveDealership(Dealership dealership) {
+
     }
 }
